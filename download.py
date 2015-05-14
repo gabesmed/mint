@@ -5,6 +5,7 @@ import datetime
 import pandas
 import time
 import argparse
+import os
 
 
 def default(obj):
@@ -38,6 +39,8 @@ def main():
     args = parser.parse_args()
 
     mint = mintapi.Mint(args.email, args.password)
+
+    os.makedirs('data')
 
     with closing(open('data/accounts.json', 'w')) as f:
         json.dump(mint.get_accounts(), f, default=default, indent=2)
