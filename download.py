@@ -1,4 +1,3 @@
-import mintapi
 import json
 from contextlib import closing
 import datetime
@@ -6,6 +5,9 @@ import pandas
 import time
 import argparse
 import os
+
+import mintapi
+
 
 
 def default(obj):
